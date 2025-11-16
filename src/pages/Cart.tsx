@@ -96,8 +96,8 @@ const Cart = () => {
                       </h3>
                     </Link>
                     <p className="text-sm text-muted-foreground">{item.comic.publisher}</p>
-                    <p className="text-lg font-bold text-primary">
-                      ${item.comic.price.toFixed(2)}
+                    <p className="text-lg font-bold text-gradient">
+                      ₹{item.comic.price}
                     </p>
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-2">
@@ -141,16 +141,16 @@ const Cart = () => {
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between text-muted-foreground">
                   <span>Subtotal</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>₹{total}</span>
                 </div>
                 <div className="flex justify-between text-muted-foreground">
                   <span>Shipping</span>
-                  <span className="text-primary">FREE</span>
+                  <span className="text-secondary font-bold">FREE</span>
                 </div>
-                <div className="h-px bg-border" />
-                <div className="flex justify-between text-xl font-bold">
+                <div className="h-px bg-gradient-accent" />
+                <div className="flex justify-between text-2xl font-bold">
                   <span>Total</span>
-                  <span className="text-primary">${total.toFixed(2)}</span>
+                  <span className="text-gradient animate-glow-pulse">₹{total}</span>
                 </div>
               </div>
               <Button

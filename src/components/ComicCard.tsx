@@ -20,13 +20,14 @@ const ComicCard = ({ comic }: ComicCardProps) => {
 
   return (
     <Link to={`/comic/${comic.id}`}>
-      <Card className="group overflow-hidden hover-lift gradient-card border-border/50 h-full">
-        <div className="aspect-[2/3] overflow-hidden bg-muted">
+      <Card className="group overflow-hidden hover-lift comic-panel h-full">
+        <div className="aspect-[2/3] overflow-hidden bg-muted relative">
           <img
             src={comic.coverImage}
             alt={comic.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
         </div>
         <div className="p-4 space-y-3">
           <div className="space-y-1">
@@ -36,11 +37,11 @@ const ComicCard = ({ comic }: ComicCardProps) => {
             <p className="text-sm text-muted-foreground">{comic.publisher}</p>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-lg font-bold text-primary">${comic.price.toFixed(2)}</span>
+            <span className="text-lg font-bold text-gradient">₹{comic.price}</span>
             <Button
               size="sm"
               onClick={handleAddToCart}
-              className="gap-2"
+              className="gap-2 shadow-glow"
             >
               <ShoppingCart className="h-4 w-4" />
               Add
