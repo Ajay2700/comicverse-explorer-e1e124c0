@@ -59,10 +59,10 @@ const ComicDetail = () => {
           {/* Details */}
           <div className="space-y-6">
             <div>
-              <Badge className="mb-4">{comic.publisher}</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">{comic.title}</h1>
+              <Badge className="mb-4 shadow-glow">{comic.publisher}</Badge>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">{comic.title}</h1>
               <div className="flex items-baseline gap-4 mb-6">
-                <span className="text-3xl font-bold text-primary">${comic.price.toFixed(2)}</span>
+                <span className="text-4xl font-bold text-gradient animate-glow-pulse">₹{comic.price}</span>
               </div>
             </div>
 
